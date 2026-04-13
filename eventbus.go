@@ -45,9 +45,8 @@ func NewEventBus(redisClient *redis.Client) *EventBus {
 
 	// Initialize Kafka writer (producer)
 	bus.writer = kafka.NewWriter(kafka.WriterConfig{
-		Brokers:      []string{"localhost:29092"},
-		Topic:        "events",
-		RequiredAcks: kafka.RequireAll,
+		Brokers: []string{"localhost:29092"},
+		Topic:   "events",
 	})
 
 	// Initialize Kafka reader (consumer)
